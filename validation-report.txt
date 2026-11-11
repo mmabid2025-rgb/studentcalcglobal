@@ -1,0 +1,25 @@
+STATIC VALIDATION REPORT
+=======================
+HTML pages: 28
+Sitemap URLs: 28
+Unique country/territory records in assets/countries.json: 252
+Country selector options: 252
+Country directory rows: 252
+Country data embedded on directory page: 252
+Inline JavaScript blocks syntax-checked: 4
+Shared assets/app.js syntax-checked: passed
+Sitemap XML parse: passed
+
+No missing local script/style/image references, duplicate HTML IDs, missing titles, duplicate titles, or canonical mismatches were found.
+
+BROWSER INTERACTION TESTS
+=========================
+- Country directory dropdown populated all 252 entries.
+- Selecting Pakistan in the dropdown showed country details and the calculator panel.
+- Clicking Germany in the country directory updated the selected country and calculator panel.
+- Sample country-panel CGPA calculation returned 3.25 / 4.00 for 3.5 and 3.0 over 15 credits each.
+- Standalone CGPA calculator add-semester action and weighted calculation passed.
+- Semester GPA calculator “+ Add course” added a row and weighted calculation passed.
+- International GPA calculator “+ Add course” and weighted calculation passed.
+- Existing percentage calculator initialized with the repaired shared app.js and returned 75% for 75/100.
+- The country-link test used an in-memory browser document; its browser-only history warning was due to the test document's opaque about:blank origin, not site JavaScript logic.

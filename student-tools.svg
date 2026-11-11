@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+<title id="t">Student academic tools illustration</title>
+<desc id="d">Original illustration of a search interface and academic performance chart.</desc>
+<rect width="800" height="360" rx="30" fill="#f5f8fc"/>
+<rect x="55" y="55" width="690" height="250" rx="22" fill="#fff" stroke="#dfe6f1" stroke-width="5"/>
+<rect x="90" y="90" width="360" height="38" rx="19" fill="#eaf2ff"/>
+<circle cx="120" cy="109" r="10" fill="#1677ff"/>
+<path d="M145 109h260M115 255l110-70 90 35 125-100 100 65" fill="none" stroke="#1677ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="225" cy="185" r="9" fill="#1677ff"/><circle cx="315" cy="220" r="9" fill="#1677ff"/><circle cx="440" cy="120" r="9" fill="#1677ff"/><circle cx="540" cy="185" r="9" fill="#1677ff"/>
+</svg>
