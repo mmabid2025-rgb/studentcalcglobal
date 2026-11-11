@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="t d">
+<title id="t">International students using academic calculators</title>
+<desc id="d">Original illustration of students, a calculator and a globe.</desc>
+<rect width="900" height="420" rx="36" fill="#eef6ff"/>
+<circle cx="660" cy="210" r="140" fill="#fff" stroke="#1677ff" stroke-width="10"/>
+<ellipse cx="660" cy="210" rx="72" ry="140" fill="none" stroke="#1677ff" stroke-width="7"/>
+<path d="M520 210h280M548 145h224M548 275h224M660 70v280" fill="none" stroke="#1677ff" stroke-width="7"/>
+<rect x="105" y="105" width="180" height="220" rx="24" fill="#fff" stroke="#17213a" stroke-width="8"/>
+<rect x="130" y="132" width="130" height="48" rx="8" fill="#dcecff"/>
+<g fill="#1677ff"><rect x="132" y="198" width="34" height="28" rx="5"/><rect x="180" y="198" width="34" height="28" rx="5"/><rect x="228" y="198" width="34" height="28" rx="5"/><rect x="132" y="238" width="34" height="28" rx="5"/><rect x="180" y="238" width="34" height="28" rx="5"/><rect x="228" y="238" width="34" height="28" rx="5"/></g>
+<circle cx="430" cy="180" r="28" fill="#fff" stroke="#17213a" stroke-width="8"/>
+<path d="M405 215l-32 52m57-47l34 47M350 320c18-72 71-104 112-58 27-40 78-34 96 9 11 25 5 43-7 49H350z" fill="#fff" stroke="#17213a" stroke-width="8"/>
+</svg>
