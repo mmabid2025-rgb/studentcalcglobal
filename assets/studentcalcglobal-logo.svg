@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" role="img" aria-labelledby="title desc">
+<title id="title">StudentCalcGlobal SCG logo</title>
+<desc id="desc">SCG initials in navy with teal and blue orbit strokes.</desc>
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0b2d59"/><stop offset="1" stop-color="#087fba"/></linearGradient></defs>
+<path d="M31 43C55 5 173 0 207 34" fill="none" stroke="#0aa6b7" stroke-width="8" stroke-linecap="round"/>
+<path d="M210 107c-36 37-147 43-181 6" fill="none" stroke="#087fba" stroke-width="8" stroke-linecap="round"/>
+<text x="120" y="91" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="800" letter-spacing="-5" fill="url(#g)">SCG</text>
+</svg>
