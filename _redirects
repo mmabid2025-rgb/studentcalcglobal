@@ -1,0 +1,23 @@
+# Consolidate duplicate root-level article copies onto their canonical /articles/ URLs.
+# Forced redirects are intentional because the duplicate source HTML files exist.
+# Keep these rules limited to the five verified duplicate article pairs.
+
+# Choosing a GPA scale
+/choosing-gpa-scale /articles/choosing-gpa-scale.html 301!
+/choosing-gpa-scale.html /articles/choosing-gpa-scale.html 301!
+
+# Course credits and GPA
+/course-credits-and-gpa /articles/course-credits-and-gpa.html 301!
+/course-credits-and-gpa.html /articles/course-credits-and-gpa.html 301!
+
+# GPA vs CGPA
+/gpa-vs-cgpa /articles/gpa-vs-cgpa.html 301!
+/gpa-vs-cgpa.html /articles/gpa-vs-cgpa.html 301!
+
+# Grading systems around the world
+/grading-systems-around-world /articles/grading-systems-around-world.html 301!
+/grading-systems-around-world.html /articles/grading-systems-around-world.html 301!
+
+# How to calculate CGPA
+/how-to-calculate-cgpa /articles/how-to-calculate-cgpa.html 301!
+/how-to-calculate-cgpa.html /articles/how-to-calculate-cgpa.html 301!
