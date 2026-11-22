@@ -50,7 +50,7 @@
     result.classList.remove('hidden');
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  if (typeof document !== 'undefined') document.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('calc');
     const result = document.getElementById('result');
     if (!button || !result) return;
