@@ -1,0 +1,7 @@
+# Consolidate legacy root-level article URLs with their canonical article paths.
+/choosing-gpa-scale.html /articles/choosing-gpa-scale.html 301!
+/course-credits-and-gpa.html /articles/course-credits-and-gpa.html 301!
+/gpa-vs-cgpa.html /articles/gpa-vs-cgpa.html 301!
+/grading-systems-around-world.html /articles/grading-systems-around-world.html 301!
+/how-to-calculate-cgpa.html /articles/how-to-calculate-cgpa.html 301!
+/index.html / 301!
