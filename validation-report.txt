@@ -51,13 +51,14 @@ ACCESSIBILITY AND CALCULATOR QUALITY
 - German grade conversion rejects blank inputs before applying the modified Bavarian formula.
 - Generic calculator changes in this branch validate missing/invalid inputs, paired fields, score/weight ranges, attendance limits, date validity and marks rows.
 
-TESTS TO RUN ON THIS BRANCH
----------------------------
-- JavaScript syntax compilation for assets/app.js and inline scripts.
-- Static checks for page titles, descriptions, canonicals, labels, live-result regions and internal links.
-- Arithmetic regression examples: study 12 hours / 4 subjects = 3 hours per subject; credits 15 / 15 weeks = 1 credit per week; course-credit example 28.70 / 8 = 3.5875 (3.59); German estimate for max 4.0, min pass 2.0, achieved 3.2 = 2.20.
-- Check invalid/blank German converter inputs are rejected.
-- Check all six redirect targets exist in the repository and sitemap URLs remain present.
+TESTS PERFORMED ON THIS BRANCH
+-------------------------------
+- JavaScript syntax compilation passed for assets/app.js.
+- Static checks passed: 18/18 for page titles, descriptions, canonicals, unique IDs, labels, live-result regions, article links, redirect rules, sitemap count and report freshness.
+- Arithmetic regression examples passed: 12 study hours / 4 subjects = 3 hours per subject; 15 credits / 15 weeks = 1 credit per week; course-credit example 28.70 / 8 = 3.5875 (3.59); German estimate for max 4.0, minimum pass 2.0, achieved 3.2 = 2.20.
+- Blank-input rejection for the German converter and whole-number semester-week validation were confirmed by static assertions.
+- All six redirect rules are present and forced; all 30 sitemap entries remain present.
+- GitHub reports the Netlify deploy-preview status as success for current head 4396275789c030ee9f012539b941ee1f0517220d. This confirms the preview check/deploy status, not manual browser interaction or accessibility testing.
 
 DEPLOYMENT AND PERFORMANCE LIMITATIONS
 --------------------------------------
