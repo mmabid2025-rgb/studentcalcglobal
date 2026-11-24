@@ -88,7 +88,7 @@ function initTool(){
   };
   if(page==="credits")$("#calc").onclick=()=>{
     const c=readNum("#credits"),weeksRaw=$("#weeks")?.value.trim()||"",weeks=weeksRaw?readNum("#weeks"):null;
-    if(c===null||c<=0||(weeksRaw&&(weeks===null||weeks<=0))){inputError("Enter total credit hours greater than zero. If you enter semester weeks, they must also be greater than zero.");return;}
+    if(c===null||c<=0||(weeksRaw&&(weeks===null||weeks<=0||!Number.isInteger(weeks)))){inputError("Enter total credit hours greater than zero. If you enter semester weeks, use a whole number greater than zero.");return;}
     result(`<span>Total credit hours</span><strong>${fmt(c,1)}</strong><span>${weeks? "Approximate credits per week: "+fmt(c/weeks,2)+".":"Add semester weeks if you want a weekly estimate."}</span>`);
   };
   if(page==="tuition")$("#calc").onclick=()=>{
