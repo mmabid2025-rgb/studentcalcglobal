@@ -66,3 +66,38 @@ DEPLOYMENT AND PERFORMANCE LIMITATIONS
 - No Netlify management connector is available, so production deploy configuration and live response headers cannot be changed or independently inspected here.
 - Google PageSpeed connector is available but not connected. A PageSpeed API key is required through the secure connector form; it must not be pasted into chat. No Core Web Vitals or Lighthouse scores are claimed.
 - No merge, production deploy, AdSense outcome, backlink, ranking or indexed-URL count is claimed.
+
+
+FOLLOW-UP REVIEW — 2026-11-25
+================================
+
+SEARCH CONSOLE — LATEST COMPLETE PERIODS
+Source: connected domain property sc-domain:studentcalcglobal.com. Page-level Search Analytics; comparison uses 2026-11-10 to 2026-11-23 versus 2026-10-27 to 2026-11-09.
+- Current: 356 impressions, 7 clicks, 1.97% CTR, impression-weighted average position 24.41.
+- Previous: 96 impressions, 1 click, 1.04% CTR, impression-weighted average position 31.66.
+- Change: +260 impressions (+270.8%), +6 clicks, CTR +0.93 percentage points, average position improved by 7.25 places. This is still a low-volume early signal, not proof of a durable growth trend.
+- Highest-impression pages: /study-hours-calculator (75 impressions, 0 clicks, avg position 7.68); /articles/how-to-calculate-cgpa (40, 0, 62.35); /international-gpa-calculator.html (39, 0, 43.33); /articles/course-credits-and-gpa (38, 0, 18.95); /credit-hours-calculator (38, 0, 12.16); /articles/grading-systems-around-world (33, 1, 39.03).
+- Query examples mapped to landing pages: "how to calculate cgpa" (7 impressions, avg position 66.29); "how to calculate cgpa in university" (3, 50.67); "do classes with more credits affect your gpa more" (1, 9); "how do credits affect gpa" (1, 11). Query counts are small and anonymized low-volume queries may be omitted.
+
+SITEMAP / URL STATUS
+- Sitemap: 30 submitted URLs, 0 errors, 0 warnings; last submitted/downloaded 2026-11-22.
+- Search Analytics returns extensionless URLs for several pages even though source HTML declares .html canonicals and sitemap entries use .html. This needs URL Inspection and live redirect verification; no additional extension redirects were added speculatively.
+- The connected Search Console connector exposes Search Analytics and sitemap summaries, not URL Inspection selected-canonical/indexing results. A direct Search Console API authorization with the webmasters.readonly scope and access to sc-domain:studentcalcglobal.com is required for automated per-URL inspection.
+
+FOLLOW-UP IMPROVEMENTS ON THIS BRANCH
+- Added explicit input labels, helper text and polite result announcements to Tuition, Scholarship, Attendance and Age calculators.
+- Replaced generic page filler with calculator-specific formulas, worked examples and clear limitations for tuition, scholarship and attendance estimates.
+- Fixed a floating-point rounding edge case in future attendance calculation: 60 attended of 80 held with an 80% target now correctly returns 20 consecutive classes, not 21.
+- Kept all work on audit/safe-seo-calculator-fixes-2026-11-23; no merge or production deployment was performed.
+
+FOLLOW-UP VALIDATION
+- JavaScript syntax compilation for assets/app.js: passed after the attendance fix.
+- All 30 sitemap-listed HTML pages on the audit branch: title, meta description, canonical, exactly one H1 and unique IDs checks passed.
+- Updated Tuition, Scholarship, Attendance and Age pages: every interactive input has a programmatic label; each result region uses aria-live="polite"; one H1 per page.
+- Arithmetic regression checks: tuition 2,500 × 8 + 1,000 = 21,000; scholarship (90 × 60 + 80 × 40) ÷ 100 = 86; attendance 60/80 = 75% and 20 future classes to reach 80%; study allocation 12/4 = 3 hours; credits 15/15 = 1 per week; weighted GPA 28.70/8 = 3.59; modified Bavarian example = 2.20.
+- These are static/code and arithmetic checks. Full browser, keyboard/screen-reader, mobile visual and live HTTP redirect tests remain outstanding because the website/preview is not reachable through the available browser inspection tool in this run.
+
+BLOCKERS
+- Google PageSpeed Insights connector is available but not connected. Its setup form requires the site URL and a sensitive Google PageSpeed Insights API key. The key must be entered in the secure connection form, not pasted into chat.
+- Netlify deploy-preview status must be checked again after the latest commits; the earlier preview status only covered the previous head commit.
+- AdSense rejection reason is not exposed by Search Console or GitHub; the AdSense Sites issue details are needed before attributing the rejection to a specific cause.
