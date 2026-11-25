@@ -53,7 +53,7 @@ function initTool(){
     let message;
     if(pct>=target)message="You are already at or above your target.";
     else if(target===100)message="A 100% target cannot be reached after absences by adding future attended classes alone.";
-    else{const need=Math.ceil((target*held/100-att)/(1-target/100));message="Attend "+need+" consecutive classes (assuming no further absences) to reach "+target+"%.";}
+    else{const need=Math.max(0,Math.ceil(((target*held-100*att)/(100-target))-1e-10));message="Attend "+need+" consecutive classes (assuming no further absences) to reach "+target+"%.";}
     result(`<span>Current attendance</span><strong>${fmt(pct)}%</strong><span>${message}</span>`);
   };
   if(page==="study")$("#calc").onclick=()=>{
