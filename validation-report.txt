@@ -101,3 +101,29 @@ BLOCKERS
 - Google PageSpeed Insights connector is available but not connected. Its setup form requires the site URL and a sensitive Google PageSpeed Insights API key. The key must be entered in the secure connection form, not pasted into chat.
 - Netlify deploy-preview status must be checked again after the latest commits; the earlier preview status only covered the previous head commit.
 - AdSense rejection reason is not exposed by Search Console or GitHub; the AdSense Sites issue details are needed before attributing the rejection to a specific cause.
+
+
+FOLLOW-UP REVIEW — 2026-11-26
+================================
+
+SEARCH CONSOLE — LATEST COMPLETE 14-DAY WINDOWS
+Source: connected domain property sc-domain:studentcalcglobal.com.
+- 2026-11-12 to 2026-11-25 property-level aggregate: 224 impressions, 7 clicks, 3.12% CTR, average position 28.65.
+- Previous 2026-10-29 to 2026-11-11 aggregate: 158 impressions, 1 click, 0.63% CTR, average position 28.58.
+- Change: +66 impressions (+41.8%), +6 clicks, CTR +2.49 percentage points; average position is effectively flat and slightly worse by 0.07 places. This is still a small-volume signal.
+- Important connector consistency warning: page-dimension rows for the current window sum to 279 impressions, while the dimensionless property aggregate reports 224. Do not use the page-row sum as a property total; treat individual page rows as directional until reconciled.
+- Highest page-dimension rows: /study-hours-calculator (61 impressions, 0 clicks, position 7.03); /articles/how-to-calculate-cgpa (35, 0, 65.23); /international-gpa-calculator.html (31, 0, 51.71); /articles/course-credits-and-gpa (28, 0, 18.79); /credit-hours-calculator (25, 0, 15.00). The extensionless /international-gpa-calculator also appears separately (4 impressions, position 5.50), so URL/canonical handling needs verification.
+- The university directory has 1 impression and 0 clicks in this window; it is too early to infer performance.
+- Query examples: "how to calculate cgpa" (6 impressions, position 64); "how to calculate cgpa in university" (3, position 50.67); "honours cgpa calculation" (3, position 53); "gpa calculator europe" (3, position 82). Search query coverage is sparse and low-volume queries may be omitted.
+- Sitemap https://studentcalcglobal.com/sitemap.xml: 30 submitted URLs, 0 errors, 0 warnings; last submitted/downloaded 2026-11-22.
+
+CURRENT BRANCH / PREVIEW STATUS
+- Branch: audit/safe-seo-calculator-fixes-2026-11-23; compare against main: 20 commits ahead, 0 behind.
+- Netlify deploy-preview status for commit 9ea80abd777988f8f9ef2e96db0dcb22b6b2923b: SUCCESS. This confirms the preview deployment check only, not full browser QA or production deployment.
+- Existing static/arithmetic validation from the Nov 25 head remains documented above; no new application code was changed in this follow-up.
+
+BLOCKERS / CAUTIONS
+- Search Console connector returns Search Analytics and sitemap summaries, not per-URL URL Inspection selected-canonical or indexed-status data. Automated URL Inspection needs direct Search Console API authorization with https://www.googleapis.com/auth/webmasters.readonly and access to sc-domain:studentcalcglobal.com.
+- Google PageSpeed connector is available but not connected. Its secure setup requires site URL https://studentcalcglobal.com/ and a Google PageSpeed Insights API key; never paste the key into chat.
+- Live HTTP response/redirect checks could not be performed because external DNS resolution is unavailable in this execution environment. Netlify management is not connected.
+- No production merge/deployment, indexed-URL count, backlink count, ranking guarantee or AdSense outcome is claimed.
