@@ -127,3 +127,47 @@ BLOCKERS / CAUTIONS
 - Google PageSpeed connector is available but not connected. Its secure setup requires site URL https://studentcalcglobal.com/ and a Google PageSpeed Insights API key; never paste the key into chat.
 - Live HTTP response/redirect checks could not be performed because external DNS resolution is unavailable in this execution environment. Netlify management is not connected.
 - No production merge/deployment, indexed-URL count, backlink count, ranking guarantee or AdSense outcome is claimed.
+
+
+FOLLOW-UP REVIEW — 2026-11-27
+================================
+
+SEARCH CONSOLE — MATCHED AVAILABLE-DATA WINDOWS
+Source: connected Google Search Console domain property sc-domain:studentcalcglobal.com.
+The connector returned daily data through 2026-11-24, not 2026-11-25 or 2026-11-26. To avoid comparing unequal windows, this review uses two matched 13-day periods:
+- Current: 2026-11-12 to 2026-11-24: 224 impressions, 7 clicks, 3.125% CTR, impression-weighted average position 28.65.
+- Previous: 2026-10-30 to 2026-11-11: 155 impressions, 1 click, 0.645% CTR, impression-weighted average position 28.20.
+- Change: +69 impressions (+44.5%), +6 clicks, CTR +2.48 percentage points; average position is 0.45 places worse. Do not describe the average position as improving. This remains a low-volume signal.
+- Page-dimension rows total 275 impressions, not 224. The connector's page-dimension result therefore does not reconcile with the property-level aggregate; use 224 for the property total and treat page rows only as directional.
+- Highest page rows: /study-hours-calculator (61 impressions, 0 clicks, position 7.03); /articles/how-to-calculate-cgpa (35, 0, 65.23); /international-gpa-calculator.html (31, 0, 51.71); /articles/course-credits-and-gpa (28, 0, 18.79); /credit-hours-calculator (25, 0, 15.00). The extensionless /international-gpa-calculator also appears (4 impressions, 0 clicks, position 5.50). The university directory has 1 impression, 0 clicks, position 4.00.
+- The query/page dimension returned 42 visible query-page rows. Relevant examples: "how to calculate cgpa" (6 impressions, position 64); "how to calculate cgpa in university" (3, position 50.67); "honours cgpa calculation" (3, position 53); "gpa calculator europe" (3, position 82); "high school gpa calculator for international students" (3, position 44.67). Query rows show no clicks, while page-level aggregate has 7; anonymized/omitted queries and connector aggregation differences mean these rows are not a complete click attribution.
+- Search Console returned sitemap https://studentcalcglobal.com/sitemap.xml with 30 submitted URLs, 0 errors, 0 warnings; last submitted/downloaded 2026-11-22. This is sitemap processing, not proof that all URLs are indexed.
+
+REPOSITORY REVIEW AND NEW SAFE IMPROVEMENT
+- Main branch still contains the university directory, German grade estimate calculator and 30-URL sitemap. The audit branch is 22 commits ahead of main and 0 behind before this follow-up.
+- The country grading page exposes 252 country/territory rows. Embedded data marks 240 as "unverified"; 12 have documented references, including institution-specific examples, mark scales, reverse grading guidance and classifications. These are not 12 universal national GPA scales.
+- Added a reversible usability/content-quality improvement to country-grading-systems.html on this audit branch: show the 12 entries with documented references by default, hide the 240 unverified placeholder rows initially, and add an accessible checkbox to include all 252 entries. All entries remain available; no grading values or source records were changed.
+- Existing GSC priority remains the CGPA guide (35 page-row impressions, average position 65.23) and Study Hours Calculator (61, position 7.03, no clicks). The CGPA guide already contains a credit-weighted formula, course and semester examples, policy caveats and FAQs; do not add repetitive keyword-stuffed text. Improve it only with additional original evidence or a distinct useful explanation.
+- Study Hours page title and description are already specific. Zero clicks from 61 page-row impressions is a reason to inspect actual rendered snippets and anonymized query coverage, not proof that title changes will help.
+- The extensionless and .html International GPA URLs remain unresolved. Source canonical points to the .html URL and sitemap lists .html; do not add broad redirects until live HTTP behavior and Google-selected canonical are verified.
+
+TESTS ON THIS FOLLOW-UP
+- Country data parsed: 252 records; 12 documented-reference records; 240 unverified records.
+- Static table check: 252 country rows; 12 visible by default; 240 carry the hidden attribute.
+- Directory filter logic checks passed: default shows 12; include checkbox shows 252; unverified-only search is hidden by default and appears when included; documented-country search remains available.
+- Inline country-directory JavaScript syntax compilation passed.
+- Duplicate HTML IDs: none.
+- Sitemap remains valid as a 30-URL list and includes university-directory.html.
+- These are static and logic checks; no full browser, mobile, keyboard or screen-reader session was performed.
+
+BRANCH AND DEPLOYMENT
+- New commit: 75148aa276e05726c777982e6deee9a1a3723803 — "Show sourced grading entries first in country directory".
+- Change is on audit/safe-seo-calculator-fixes-2026-11-23, within draft PR #13. No changes were made to main.
+- Previous branch head 7f5e83a9192fb74e1bf57df4b5cf27311984f4a1 had a successful Netlify deploy-preview status. The new commit requires a fresh preview status check; do not rely on the previous head's green status for the new commit.
+- No merge, production deployment, live domain change, backlink count, indexed-URL count, ranking guarantee or AdSense outcome is claimed.
+
+BLOCKERS
+- Search Console connector is connected for Search Analytics and sitemap summaries, but not URL Inspection. Per-URL indexed status and Google-selected canonical require direct Search Console API authorization with https://www.googleapis.com/auth/webmasters.readonly and permission to the sc-domain:studentcalcglobal.com property.
+- Google PageSpeed connector is not connected. It requires the website URL https://studentcalcglobal.com/ and a Google PageSpeed Insights API key entered through the secure connector authorization flow; never paste the key into chat.
+- Netlify management is not connected, and external live HTTP/browser inspection is unavailable in this run. Manual preview QA and live redirect/header checks remain outstanding.
+- No AdSense account diagnostic data is connected; the actual rejection reason cannot be inferred from Search Console or repository contents.
