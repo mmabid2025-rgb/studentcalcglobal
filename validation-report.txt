@@ -225,3 +225,11 @@ CURRENT PRIORITIES / BLOCKERS
 - Netlify management is not connected. The latest deploy-preview status is pending; production response headers, redirects and live settings cannot be inspected here. External DNS resolution is unavailable in this execution environment.
 - Older overlapping open pull requests remain (#1, #6, #7, #8, #10 and #11). Reconcile them with PR #13 before any merge.
 - No indexed-URL count, backlink count, search-volume estimate, ranking guarantee or AdSense outcome is claimed.
+
+
+DEPLOY PREVIEW STATUS REFRESH — 2026-11-28
+-----------------------------------------
+- Rechecked the Netlify status for latest code-changing commit 553bde215e3b29a793a3a82bec44aaf11937566c: `netlify/studentcalcglobal/deploy-preview` is SUCCESS.
+- The later commit b2ad3863252fddfe8aa86c2b6ea82514ed03b474 changes only validation-report.txt; it contains no deployable site code.
+- Attempted to open the exact Netlify preview URLs for the homepage, country grading directory and German grade estimator through the available page-inspection service. All three preview URLs were inaccessible to that inspection service. Therefore no visual/browser/mobile/keyboard QA is claimed.
+- PR #13 remains open and draft; GitHub currently reports it mergeable. Keep it unmerged until the owner completes manual preview QA.
