@@ -25,7 +25,9 @@
   .country-caution{margin-top:14px;padding:13px 15px;border-radius:10px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12}
   .country-directory{margin-top:40px}
   .directory-tools{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:14px 0}
-  .directory-tools input{max-width:380px}
+  .directory-tools input[type="search"]{max-width:380px}
+  .directory-tools .include-unverified{display:flex;align-items:center;gap:8px;font-size:.9rem}
+  .directory-tools .include-unverified input{width:auto;min-height:0;margin:0}
   .table-scroll{overflow-x:auto;border:1px solid #e4e7ec;border-radius:14px;background:white}
   .country-table{width:100%;border-collapse:collapse;min-width:790px;font-size:.92rem}
   .country-table th,.country-table td{padding:11px 13px;text-align:left;border-bottom:1px solid #eaecf0;vertical-align:top}
@@ -358,78 +360,80 @@
 <p class="muted">Click a country or territory name to load its grading reference and calculator guidance.</p>
 <div class="directory-tools">
 <input aria-label="Search the country directory" id="countrySearch" placeholder="Search countries and territories" type="search"/>
-<span class="cgpa-help" id="countryCount">252 entries</span>
+<label class="include-unverified"><input id="showUnverified" type="checkbox"/> Include entries without a verified grading reference</label>
+<span aria-live="polite" aria-atomic="true" class="cgpa-help" id="countryCount">12 documented entries</span>
 </div>
+<p class="cgpa-help" id="countryDirectoryNote" role="status">Showing 12 entries with documented grading references. 240 entries without a verified grading reference are hidden by default; select the checkbox to include them.</p>
 <div class="table-scroll"><table class="country-table">
 <thead><tr><th scope="col">Country / territory</th><th scope="col">Grading scale example</th><th scope="col">What to know</th><th scope="col">References</th></tr></thead>
 <tbody id="countryTableBody">
-<tr data-country-row="Afghanistan" id="country-afghanistan">
+<tr hidden data-country-row="Afghanistan" id="country-afghanistan">
 <th scope="row"><a class="country-link" data-country-link="Afghanistan" href="#country-afghanistan">Afghanistan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Albania" id="country-albania">
+<tr hidden data-country-row="Albania" id="country-albania">
 <th scope="row"><a class="country-link" data-country-link="Albania" href="#country-albania">Albania</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Algeria" id="country-algeria">
+<tr hidden data-country-row="Algeria" id="country-algeria">
 <th scope="row"><a class="country-link" data-country-link="Algeria" href="#country-algeria">Algeria</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="American Samoa" id="country-american-samoa">
+<tr hidden data-country-row="American Samoa" id="country-american-samoa">
 <th scope="row"><a class="country-link" data-country-link="American Samoa" href="#country-american-samoa">American Samoa</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Andorra" id="country-andorra">
+<tr hidden data-country-row="Andorra" id="country-andorra">
 <th scope="row"><a class="country-link" data-country-link="Andorra" href="#country-andorra">Andorra</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Angola" id="country-angola">
+<tr hidden data-country-row="Angola" id="country-angola">
 <th scope="row"><a class="country-link" data-country-link="Angola" href="#country-angola">Angola</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Anguilla" id="country-anguilla">
+<tr hidden data-country-row="Anguilla" id="country-anguilla">
 <th scope="row"><a class="country-link" data-country-link="Anguilla" href="#country-anguilla">Anguilla</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Antarctica" id="country-antarctica">
+<tr hidden data-country-row="Antarctica" id="country-antarctica">
 <th scope="row"><a class="country-link" data-country-link="Antarctica" href="#country-antarctica">Antarctica</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Antigua and Barbuda" id="country-antigua-and-barbuda">
+<tr hidden data-country-row="Antigua and Barbuda" id="country-antigua-and-barbuda">
 <th scope="row"><a class="country-link" data-country-link="Antigua and Barbuda" href="#country-antigua-and-barbuda">Antigua and Barbuda</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Argentina" id="country-argentina">
+<tr hidden data-country-row="Argentina" id="country-argentina">
 <th scope="row"><a class="country-link" data-country-link="Argentina" href="#country-argentina">Argentina</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Armenia" id="country-armenia">
+<tr hidden data-country-row="Armenia" id="country-armenia">
 <th scope="row"><a class="country-link" data-country-link="Armenia" href="#country-armenia">Armenia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Aruba" id="country-aruba">
+<tr hidden data-country-row="Aruba" id="country-aruba">
 <th scope="row"><a class="country-link" data-country-link="Aruba" href="#country-aruba">Aruba</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -441,25 +445,25 @@
 <td>Australia has no nationally uniform GPA scale; UTS is an example of a university using a 7-point GPA.</td>
 <td class="source-cell"><a href="https://askuon-future.newcastle.edu.au/app/answers/detail/a_id/259/~/how-can-i-calculate-my-grade-point-average-%28gpa%29-and-obtain-an-official-gpa" rel="noopener noreferrer" target="_blank">University of Newcastle — notes that Australian universities do not have a nationally recognised uniform GPA scale</a> · <a href="https://www.uts.edu.au/for-students/current-students/managing-your-course/attendance-and-study-load/results/grading-schema-coursework-subjects/grade-point-average-and-weighted-average-mark" rel="noopener noreferrer" target="_blank">University of Technology Sydney — 7-point GPA example</a></td>
 </tr>
-<tr data-country-row="Austria" id="country-austria">
+<tr hidden data-country-row="Austria" id="country-austria">
 <th scope="row"><a class="country-link" data-country-link="Austria" href="#country-austria">Austria</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Azerbaijan" id="country-azerbaijan">
+<tr hidden data-country-row="Azerbaijan" id="country-azerbaijan">
 <th scope="row"><a class="country-link" data-country-link="Azerbaijan" href="#country-azerbaijan">Azerbaijan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bahamas" id="country-bahamas">
+<tr hidden data-country-row="Bahamas" id="country-bahamas">
 <th scope="row"><a class="country-link" data-country-link="Bahamas" href="#country-bahamas">Bahamas</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bahrain" id="country-bahrain">
+<tr hidden data-country-row="Bahrain" id="country-bahrain">
 <th scope="row"><a class="country-link" data-country-link="Bahrain" href="#country-bahrain">Bahrain</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -471,127 +475,127 @@
 <td>A UGC engineering curriculum guideline lists A = 4.0 through F = 0.0; institutional rules may add subdivisions.</td>
 <td class="source-cell"><a href="https://ugc.gov.bd/sites/default/files/files/ugc.portal.gov.bd/policies/d2ff27fa_5620_44c9_9031_c5bedf15b2c7/Four_Years_Bachelor_Degree_in_Engineering-Edit-11-2017.pdf" rel="noopener noreferrer" target="_blank">University Grants Commission of Bangladesh — engineering curriculum guideline (PDF)</a></td>
 </tr>
-<tr data-country-row="Barbados" id="country-barbados">
+<tr hidden data-country-row="Barbados" id="country-barbados">
 <th scope="row"><a class="country-link" data-country-link="Barbados" href="#country-barbados">Barbados</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Belarus" id="country-belarus">
+<tr hidden data-country-row="Belarus" id="country-belarus">
 <th scope="row"><a class="country-link" data-country-link="Belarus" href="#country-belarus">Belarus</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Belgium" id="country-belgium">
+<tr hidden data-country-row="Belgium" id="country-belgium">
 <th scope="row"><a class="country-link" data-country-link="Belgium" href="#country-belgium">Belgium</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Belize" id="country-belize">
+<tr hidden data-country-row="Belize" id="country-belize">
 <th scope="row"><a class="country-link" data-country-link="Belize" href="#country-belize">Belize</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Benin" id="country-benin">
+<tr hidden data-country-row="Benin" id="country-benin">
 <th scope="row"><a class="country-link" data-country-link="Benin" href="#country-benin">Benin</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bermuda" id="country-bermuda">
+<tr hidden data-country-row="Bermuda" id="country-bermuda">
 <th scope="row"><a class="country-link" data-country-link="Bermuda" href="#country-bermuda">Bermuda</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bhutan" id="country-bhutan">
+<tr hidden data-country-row="Bhutan" id="country-bhutan">
 <th scope="row"><a class="country-link" data-country-link="Bhutan" href="#country-bhutan">Bhutan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bolivia, Plurinational State of" id="country-bolivia-plurinational-state-of">
+<tr hidden data-country-row="Bolivia, Plurinational State of" id="country-bolivia-plurinational-state-of">
 <th scope="row"><a class="country-link" data-country-link="Bolivia, Plurinational State of" href="#country-bolivia-plurinational-state-of">Bolivia, Plurinational State of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bonaire, Sint Eustatius and Saba" id="country-bonaire-sint-eustatius-and-saba">
+<tr hidden data-country-row="Bonaire, Sint Eustatius and Saba" id="country-bonaire-sint-eustatius-and-saba">
 <th scope="row"><a class="country-link" data-country-link="Bonaire, Sint Eustatius and Saba" href="#country-bonaire-sint-eustatius-and-saba">Bonaire, Sint Eustatius and Saba</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bosnia and Herzegovina" id="country-bosnia-and-herzegovina">
+<tr hidden data-country-row="Bosnia and Herzegovina" id="country-bosnia-and-herzegovina">
 <th scope="row"><a class="country-link" data-country-link="Bosnia and Herzegovina" href="#country-bosnia-and-herzegovina">Bosnia and Herzegovina</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Botswana" id="country-botswana">
+<tr hidden data-country-row="Botswana" id="country-botswana">
 <th scope="row"><a class="country-link" data-country-link="Botswana" href="#country-botswana">Botswana</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bouvet Island" id="country-bouvet-island">
+<tr hidden data-country-row="Bouvet Island" id="country-bouvet-island">
 <th scope="row"><a class="country-link" data-country-link="Bouvet Island" href="#country-bouvet-island">Bouvet Island</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Brazil" id="country-brazil">
+<tr hidden data-country-row="Brazil" id="country-brazil">
 <th scope="row"><a class="country-link" data-country-link="Brazil" href="#country-brazil">Brazil</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="British Indian Ocean Territory" id="country-british-indian-ocean-territory">
+<tr hidden data-country-row="British Indian Ocean Territory" id="country-british-indian-ocean-territory">
 <th scope="row"><a class="country-link" data-country-link="British Indian Ocean Territory" href="#country-british-indian-ocean-territory">British Indian Ocean Territory</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Brunei Darussalam" id="country-brunei-darussalam">
+<tr hidden data-country-row="Brunei Darussalam" id="country-brunei-darussalam">
 <th scope="row"><a class="country-link" data-country-link="Brunei Darussalam" href="#country-brunei-darussalam">Brunei Darussalam</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Bulgaria" id="country-bulgaria">
+<tr hidden data-country-row="Bulgaria" id="country-bulgaria">
 <th scope="row"><a class="country-link" data-country-link="Bulgaria" href="#country-bulgaria">Bulgaria</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Burkina Faso" id="country-burkina-faso">
+<tr hidden data-country-row="Burkina Faso" id="country-burkina-faso">
 <th scope="row"><a class="country-link" data-country-link="Burkina Faso" href="#country-burkina-faso">Burkina Faso</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Burundi" id="country-burundi">
+<tr hidden data-country-row="Burundi" id="country-burundi">
 <th scope="row"><a class="country-link" data-country-link="Burundi" href="#country-burundi">Burundi</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Cabo Verde" id="country-cabo-verde">
+<tr hidden data-country-row="Cabo Verde" id="country-cabo-verde">
 <th scope="row"><a class="country-link" data-country-link="Cabo Verde" href="#country-cabo-verde">Cabo Verde</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Cambodia" id="country-cambodia">
+<tr hidden data-country-row="Cambodia" id="country-cambodia">
 <th scope="row"><a class="country-link" data-country-link="Cambodia" href="#country-cambodia">Cambodia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Cameroon" id="country-cameroon">
+<tr hidden data-country-row="Cameroon" id="country-cameroon">
 <th scope="row"><a class="country-link" data-country-link="Cameroon" href="#country-cameroon">Cameroon</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -603,25 +607,25 @@
 <td>Canadian institutions publish different grade-point mappings; do not assume one national maximum.</td>
 <td class="source-cell"><a href="https://www.ualberta.ca/en/registrar/examinations/assessment-and-grading/grading-system-explained.html" rel="noopener noreferrer" target="_blank">University of Alberta — 4.0 grading example</a> · <a href="https://www.queensu.ca/registrar/academic-info/grades/official-gpa-scale" rel="noopener noreferrer" target="_blank">Queen’s University — institutional GPA scale example</a></td>
 </tr>
-<tr data-country-row="Cayman Islands" id="country-cayman-islands">
+<tr hidden data-country-row="Cayman Islands" id="country-cayman-islands">
 <th scope="row"><a class="country-link" data-country-link="Cayman Islands" href="#country-cayman-islands">Cayman Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Central African Republic" id="country-central-african-republic">
+<tr hidden data-country-row="Central African Republic" id="country-central-african-republic">
 <th scope="row"><a class="country-link" data-country-link="Central African Republic" href="#country-central-african-republic">Central African Republic</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Chad" id="country-chad">
+<tr hidden data-country-row="Chad" id="country-chad">
 <th scope="row"><a class="country-link" data-country-link="Chad" href="#country-chad">Chad</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Chile" id="country-chile">
+<tr hidden data-country-row="Chile" id="country-chile">
 <th scope="row"><a class="country-link" data-country-link="Chile" href="#country-chile">Chile</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -633,181 +637,181 @@
 <td>Official university examples use different conversions; Peking University and Tongji publish distinct grading schemes.</td>
 <td class="source-cell"><a href="https://www.sis.pku.edu.cn/docs/20221017133329541093.pdf" rel="noopener noreferrer" target="_blank">Peking University — example of a university-specific 100-mark / grade-point conversion (PDF)</a> · <a href="https://jwc.tongji.edu.cn/27/d0/c30364a272336/page.htm" rel="noopener noreferrer" target="_blank">Tongji University — example of a different institution-specific grading scheme</a></td>
 </tr>
-<tr data-country-row="Christmas Island" id="country-christmas-island">
+<tr hidden data-country-row="Christmas Island" id="country-christmas-island">
 <th scope="row"><a class="country-link" data-country-link="Christmas Island" href="#country-christmas-island">Christmas Island</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Cocos (Keeling) Islands" id="country-cocos-keeling-islands">
+<tr hidden data-country-row="Cocos (Keeling) Islands" id="country-cocos-keeling-islands">
 <th scope="row"><a class="country-link" data-country-link="Cocos (Keeling) Islands" href="#country-cocos-keeling-islands">Cocos (Keeling) Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Colombia" id="country-colombia">
+<tr hidden data-country-row="Colombia" id="country-colombia">
 <th scope="row"><a class="country-link" data-country-link="Colombia" href="#country-colombia">Colombia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Comoros" id="country-comoros">
+<tr hidden data-country-row="Comoros" id="country-comoros">
 <th scope="row"><a class="country-link" data-country-link="Comoros" href="#country-comoros">Comoros</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Congo" id="country-congo">
+<tr hidden data-country-row="Congo" id="country-congo">
 <th scope="row"><a class="country-link" data-country-link="Congo" href="#country-congo">Congo</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Congo, The Democratic Republic of the" id="country-congo-the-democratic-republic-of-the">
+<tr hidden data-country-row="Congo, The Democratic Republic of the" id="country-congo-the-democratic-republic-of-the">
 <th scope="row"><a class="country-link" data-country-link="Congo, The Democratic Republic of the" href="#country-congo-the-democratic-republic-of-the">Congo, The Democratic Republic of the</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Cook Islands" id="country-cook-islands">
+<tr hidden data-country-row="Cook Islands" id="country-cook-islands">
 <th scope="row"><a class="country-link" data-country-link="Cook Islands" href="#country-cook-islands">Cook Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Costa Rica" id="country-costa-rica">
+<tr hidden data-country-row="Costa Rica" id="country-costa-rica">
 <th scope="row"><a class="country-link" data-country-link="Costa Rica" href="#country-costa-rica">Costa Rica</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Croatia" id="country-croatia">
+<tr hidden data-country-row="Croatia" id="country-croatia">
 <th scope="row"><a class="country-link" data-country-link="Croatia" href="#country-croatia">Croatia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Cuba" id="country-cuba">
+<tr hidden data-country-row="Cuba" id="country-cuba">
 <th scope="row"><a class="country-link" data-country-link="Cuba" href="#country-cuba">Cuba</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Curaçao" id="country-curacao">
+<tr hidden data-country-row="Curaçao" id="country-curacao">
 <th scope="row"><a class="country-link" data-country-link="Curaçao" href="#country-curacao">Curaçao</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Cyprus" id="country-cyprus">
+<tr hidden data-country-row="Cyprus" id="country-cyprus">
 <th scope="row"><a class="country-link" data-country-link="Cyprus" href="#country-cyprus">Cyprus</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Czechia" id="country-czechia">
+<tr hidden data-country-row="Czechia" id="country-czechia">
 <th scope="row"><a class="country-link" data-country-link="Czechia" href="#country-czechia">Czechia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Côte d'Ivoire" id="country-cote-d-ivoire">
+<tr hidden data-country-row="Côte d'Ivoire" id="country-cote-d-ivoire">
 <th scope="row"><a class="country-link" data-country-link="Côte d'Ivoire" href="#country-cote-d-ivoire">Côte d'Ivoire</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Denmark" id="country-denmark">
+<tr hidden data-country-row="Denmark" id="country-denmark">
 <th scope="row"><a class="country-link" data-country-link="Denmark" href="#country-denmark">Denmark</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Djibouti" id="country-djibouti">
+<tr hidden data-country-row="Djibouti" id="country-djibouti">
 <th scope="row"><a class="country-link" data-country-link="Djibouti" href="#country-djibouti">Djibouti</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Dominica" id="country-dominica">
+<tr hidden data-country-row="Dominica" id="country-dominica">
 <th scope="row"><a class="country-link" data-country-link="Dominica" href="#country-dominica">Dominica</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Dominican Republic" id="country-dominican-republic">
+<tr hidden data-country-row="Dominican Republic" id="country-dominican-republic">
 <th scope="row"><a class="country-link" data-country-link="Dominican Republic" href="#country-dominican-republic">Dominican Republic</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Ecuador" id="country-ecuador">
+<tr hidden data-country-row="Ecuador" id="country-ecuador">
 <th scope="row"><a class="country-link" data-country-link="Ecuador" href="#country-ecuador">Ecuador</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Egypt" id="country-egypt">
+<tr hidden data-country-row="Egypt" id="country-egypt">
 <th scope="row"><a class="country-link" data-country-link="Egypt" href="#country-egypt">Egypt</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="El Salvador" id="country-el-salvador">
+<tr hidden data-country-row="El Salvador" id="country-el-salvador">
 <th scope="row"><a class="country-link" data-country-link="El Salvador" href="#country-el-salvador">El Salvador</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Equatorial Guinea" id="country-equatorial-guinea">
+<tr hidden data-country-row="Equatorial Guinea" id="country-equatorial-guinea">
 <th scope="row"><a class="country-link" data-country-link="Equatorial Guinea" href="#country-equatorial-guinea">Equatorial Guinea</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Eritrea" id="country-eritrea">
+<tr hidden data-country-row="Eritrea" id="country-eritrea">
 <th scope="row"><a class="country-link" data-country-link="Eritrea" href="#country-eritrea">Eritrea</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Estonia" id="country-estonia">
+<tr hidden data-country-row="Estonia" id="country-estonia">
 <th scope="row"><a class="country-link" data-country-link="Estonia" href="#country-estonia">Estonia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Eswatini" id="country-eswatini">
+<tr hidden data-country-row="Eswatini" id="country-eswatini">
 <th scope="row"><a class="country-link" data-country-link="Eswatini" href="#country-eswatini">Eswatini</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Ethiopia" id="country-ethiopia">
+<tr hidden data-country-row="Ethiopia" id="country-ethiopia">
 <th scope="row"><a class="country-link" data-country-link="Ethiopia" href="#country-ethiopia">Ethiopia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Falkland Islands (Malvinas)" id="country-falkland-islands-malvinas">
+<tr hidden data-country-row="Falkland Islands (Malvinas)" id="country-falkland-islands-malvinas">
 <th scope="row"><a class="country-link" data-country-link="Falkland Islands (Malvinas)" href="#country-falkland-islands-malvinas">Falkland Islands (Malvinas)</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Faroe Islands" id="country-faroe-islands">
+<tr hidden data-country-row="Faroe Islands" id="country-faroe-islands">
 <th scope="row"><a class="country-link" data-country-link="Faroe Islands" href="#country-faroe-islands">Faroe Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Fiji" id="country-fiji">
+<tr hidden data-country-row="Fiji" id="country-fiji">
 <th scope="row"><a class="country-link" data-country-link="Fiji" href="#country-fiji">Fiji</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Finland" id="country-finland">
+<tr hidden data-country-row="Finland" id="country-finland">
 <th scope="row"><a class="country-link" data-country-link="Finland" href="#country-finland">Finland</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -819,37 +823,37 @@
 <td>French higher education commonly reports marks out of 20; 10/20 is a minimum passing mark in the cited overview.</td>
 <td class="source-cell"><a href="https://www.pakistan.campusfrance.org/student-life-in-france" rel="noopener noreferrer" target="_blank">Campus France — grading system in French higher education</a></td>
 </tr>
-<tr data-country-row="French Guiana" id="country-french-guiana">
+<tr hidden data-country-row="French Guiana" id="country-french-guiana">
 <th scope="row"><a class="country-link" data-country-link="French Guiana" href="#country-french-guiana">French Guiana</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="French Polynesia" id="country-french-polynesia">
+<tr hidden data-country-row="French Polynesia" id="country-french-polynesia">
 <th scope="row"><a class="country-link" data-country-link="French Polynesia" href="#country-french-polynesia">French Polynesia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="French Southern Territories" id="country-french-southern-territories">
+<tr hidden data-country-row="French Southern Territories" id="country-french-southern-territories">
 <th scope="row"><a class="country-link" data-country-link="French Southern Territories" href="#country-french-southern-territories">French Southern Territories</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Gabon" id="country-gabon">
+<tr hidden data-country-row="Gabon" id="country-gabon">
 <th scope="row"><a class="country-link" data-country-link="Gabon" href="#country-gabon">Gabon</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Gambia" id="country-gambia">
+<tr hidden data-country-row="Gambia" id="country-gambia">
 <th scope="row"><a class="country-link" data-country-link="Gambia" href="#country-gambia">Gambia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Georgia" id="country-georgia">
+<tr hidden data-country-row="Georgia" id="country-georgia">
 <th scope="row"><a class="country-link" data-country-link="Georgia" href="#country-georgia">Georgia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -861,157 +865,157 @@
 <td>German university grading commonly uses 1.0 as very good; 4.0 is often the lowest pass and 5.0 a fail. Rules vary.</td>
 <td class="source-cell"><a href="https://www.uni-augsburg.de/en/portal/internationals/grading-scale/" rel="noopener noreferrer" target="_blank">University of Augsburg — academic grading scale</a> · <a href="https://www.uni-passau.de/en/international/coming-to-passau/information-for-new-students/grading-scale/" rel="noopener noreferrer" target="_blank">University of Passau — German grading scale</a></td>
 </tr>
-<tr data-country-row="Ghana" id="country-ghana">
+<tr hidden data-country-row="Ghana" id="country-ghana">
 <th scope="row"><a class="country-link" data-country-link="Ghana" href="#country-ghana">Ghana</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Gibraltar" id="country-gibraltar">
+<tr hidden data-country-row="Gibraltar" id="country-gibraltar">
 <th scope="row"><a class="country-link" data-country-link="Gibraltar" href="#country-gibraltar">Gibraltar</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Greece" id="country-greece">
+<tr hidden data-country-row="Greece" id="country-greece">
 <th scope="row"><a class="country-link" data-country-link="Greece" href="#country-greece">Greece</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Greenland" id="country-greenland">
+<tr hidden data-country-row="Greenland" id="country-greenland">
 <th scope="row"><a class="country-link" data-country-link="Greenland" href="#country-greenland">Greenland</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Grenada" id="country-grenada">
+<tr hidden data-country-row="Grenada" id="country-grenada">
 <th scope="row"><a class="country-link" data-country-link="Grenada" href="#country-grenada">Grenada</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Guadeloupe" id="country-guadeloupe">
+<tr hidden data-country-row="Guadeloupe" id="country-guadeloupe">
 <th scope="row"><a class="country-link" data-country-link="Guadeloupe" href="#country-guadeloupe">Guadeloupe</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Guam" id="country-guam">
+<tr hidden data-country-row="Guam" id="country-guam">
 <th scope="row"><a class="country-link" data-country-link="Guam" href="#country-guam">Guam</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Guatemala" id="country-guatemala">
+<tr hidden data-country-row="Guatemala" id="country-guatemala">
 <th scope="row"><a class="country-link" data-country-link="Guatemala" href="#country-guatemala">Guatemala</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Guernsey" id="country-guernsey">
+<tr hidden data-country-row="Guernsey" id="country-guernsey">
 <th scope="row"><a class="country-link" data-country-link="Guernsey" href="#country-guernsey">Guernsey</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Guinea" id="country-guinea">
+<tr hidden data-country-row="Guinea" id="country-guinea">
 <th scope="row"><a class="country-link" data-country-link="Guinea" href="#country-guinea">Guinea</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Guinea-Bissau" id="country-guinea-bissau">
+<tr hidden data-country-row="Guinea-Bissau" id="country-guinea-bissau">
 <th scope="row"><a class="country-link" data-country-link="Guinea-Bissau" href="#country-guinea-bissau">Guinea-Bissau</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Guyana" id="country-guyana">
+<tr hidden data-country-row="Guyana" id="country-guyana">
 <th scope="row"><a class="country-link" data-country-link="Guyana" href="#country-guyana">Guyana</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Haiti" id="country-haiti">
+<tr hidden data-country-row="Haiti" id="country-haiti">
 <th scope="row"><a class="country-link" data-country-link="Haiti" href="#country-haiti">Haiti</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Heard Island and McDonald Islands" id="country-heard-island-and-mcdonald-islands">
+<tr hidden data-country-row="Heard Island and McDonald Islands" id="country-heard-island-and-mcdonald-islands">
 <th scope="row"><a class="country-link" data-country-link="Heard Island and McDonald Islands" href="#country-heard-island-and-mcdonald-islands">Heard Island and McDonald Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Holy See (Vatican City State)" id="country-holy-see-vatican-city-state">
+<tr hidden data-country-row="Holy See (Vatican City State)" id="country-holy-see-vatican-city-state">
 <th scope="row"><a class="country-link" data-country-link="Holy See (Vatican City State)" href="#country-holy-see-vatican-city-state">Holy See (Vatican City State)</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Honduras" id="country-honduras">
+<tr hidden data-country-row="Honduras" id="country-honduras">
 <th scope="row"><a class="country-link" data-country-link="Honduras" href="#country-honduras">Honduras</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Hong Kong" id="country-hong-kong">
+<tr hidden data-country-row="Hong Kong" id="country-hong-kong">
 <th scope="row"><a class="country-link" data-country-link="Hong Kong" href="#country-hong-kong">Hong Kong</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Hungary" id="country-hungary">
+<tr hidden data-country-row="Hungary" id="country-hungary">
 <th scope="row"><a class="country-link" data-country-link="Hungary" href="#country-hungary">Hungary</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Iceland" id="country-iceland">
+<tr hidden data-country-row="Iceland" id="country-iceland">
 <th scope="row"><a class="country-link" data-country-link="Iceland" href="#country-iceland">Iceland</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="India" id="country-india">
+<tr hidden data-country-row="India" id="country-india">
 <th scope="row"><a class="country-link" data-country-link="India" href="#country-india">India</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Indonesia" id="country-indonesia">
+<tr hidden data-country-row="Indonesia" id="country-indonesia">
 <th scope="row"><a class="country-link" data-country-link="Indonesia" href="#country-indonesia">Indonesia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Iran, Islamic Republic of" id="country-iran-islamic-republic-of">
+<tr hidden data-country-row="Iran, Islamic Republic of" id="country-iran-islamic-republic-of">
 <th scope="row"><a class="country-link" data-country-link="Iran, Islamic Republic of" href="#country-iran-islamic-republic-of">Iran, Islamic Republic of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Iraq" id="country-iraq">
+<tr hidden data-country-row="Iraq" id="country-iraq">
 <th scope="row"><a class="country-link" data-country-link="Iraq" href="#country-iraq">Iraq</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Ireland" id="country-ireland">
+<tr hidden data-country-row="Ireland" id="country-ireland">
 <th scope="row"><a class="country-link" data-country-link="Ireland" href="#country-ireland">Ireland</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Isle of Man" id="country-isle-of-man">
+<tr hidden data-country-row="Isle of Man" id="country-isle-of-man">
 <th scope="row"><a class="country-link" data-country-link="Isle of Man" href="#country-isle-of-man">Isle of Man</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Israel" id="country-israel">
+<tr hidden data-country-row="Israel" id="country-israel">
 <th scope="row"><a class="country-link" data-country-link="Israel" href="#country-israel">Israel</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -1023,349 +1027,349 @@
 <td>CIMEA describes subject exams on a 0–30 scale (18 pass) and final degree marks on a 0–110 scale.</td>
 <td class="source-cell"><a href="https://www.cimea.it/EN/pagina-sistema-di-votazione" rel="noopener noreferrer" target="_blank">CIMEA — Italian higher-education grading system</a></td>
 </tr>
-<tr data-country-row="Jamaica" id="country-jamaica">
+<tr hidden data-country-row="Jamaica" id="country-jamaica">
 <th scope="row"><a class="country-link" data-country-link="Jamaica" href="#country-jamaica">Jamaica</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Japan" id="country-japan">
+<tr hidden data-country-row="Japan" id="country-japan">
 <th scope="row"><a class="country-link" data-country-link="Japan" href="#country-japan">Japan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Jersey" id="country-jersey">
+<tr hidden data-country-row="Jersey" id="country-jersey">
 <th scope="row"><a class="country-link" data-country-link="Jersey" href="#country-jersey">Jersey</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Jordan" id="country-jordan">
+<tr hidden data-country-row="Jordan" id="country-jordan">
 <th scope="row"><a class="country-link" data-country-link="Jordan" href="#country-jordan">Jordan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Kazakhstan" id="country-kazakhstan">
+<tr hidden data-country-row="Kazakhstan" id="country-kazakhstan">
 <th scope="row"><a class="country-link" data-country-link="Kazakhstan" href="#country-kazakhstan">Kazakhstan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Kenya" id="country-kenya">
+<tr hidden data-country-row="Kenya" id="country-kenya">
 <th scope="row"><a class="country-link" data-country-link="Kenya" href="#country-kenya">Kenya</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Kiribati" id="country-kiribati">
+<tr hidden data-country-row="Kiribati" id="country-kiribati">
 <th scope="row"><a class="country-link" data-country-link="Kiribati" href="#country-kiribati">Kiribati</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Korea, Democratic People's Republic of" id="country-korea-democratic-people-s-republic-of">
+<tr hidden data-country-row="Korea, Democratic People's Republic of" id="country-korea-democratic-people-s-republic-of">
 <th scope="row"><a class="country-link" data-country-link="Korea, Democratic People's Republic of" href="#country-korea-democratic-people-s-republic-of">Korea, Democratic People's Republic of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Korea, Republic of" id="country-korea-republic-of">
+<tr hidden data-country-row="Korea, Republic of" id="country-korea-republic-of">
 <th scope="row"><a class="country-link" data-country-link="Korea, Republic of" href="#country-korea-republic-of">Korea, Republic of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Kosovo" id="country-kosovo">
+<tr hidden data-country-row="Kosovo" id="country-kosovo">
 <th scope="row"><a class="country-link" data-country-link="Kosovo" href="#country-kosovo">Kosovo</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Kuwait" id="country-kuwait">
+<tr hidden data-country-row="Kuwait" id="country-kuwait">
 <th scope="row"><a class="country-link" data-country-link="Kuwait" href="#country-kuwait">Kuwait</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Kyrgyzstan" id="country-kyrgyzstan">
+<tr hidden data-country-row="Kyrgyzstan" id="country-kyrgyzstan">
 <th scope="row"><a class="country-link" data-country-link="Kyrgyzstan" href="#country-kyrgyzstan">Kyrgyzstan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Lao People's Democratic Republic" id="country-lao-people-s-democratic-republic">
+<tr hidden data-country-row="Lao People's Democratic Republic" id="country-lao-people-s-democratic-republic">
 <th scope="row"><a class="country-link" data-country-link="Lao People's Democratic Republic" href="#country-lao-people-s-democratic-republic">Lao People's Democratic Republic</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Latvia" id="country-latvia">
+<tr hidden data-country-row="Latvia" id="country-latvia">
 <th scope="row"><a class="country-link" data-country-link="Latvia" href="#country-latvia">Latvia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Lebanon" id="country-lebanon">
+<tr hidden data-country-row="Lebanon" id="country-lebanon">
 <th scope="row"><a class="country-link" data-country-link="Lebanon" href="#country-lebanon">Lebanon</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Lesotho" id="country-lesotho">
+<tr hidden data-country-row="Lesotho" id="country-lesotho">
 <th scope="row"><a class="country-link" data-country-link="Lesotho" href="#country-lesotho">Lesotho</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Liberia" id="country-liberia">
+<tr hidden data-country-row="Liberia" id="country-liberia">
 <th scope="row"><a class="country-link" data-country-link="Liberia" href="#country-liberia">Liberia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Libya" id="country-libya">
+<tr hidden data-country-row="Libya" id="country-libya">
 <th scope="row"><a class="country-link" data-country-link="Libya" href="#country-libya">Libya</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Liechtenstein" id="country-liechtenstein">
+<tr hidden data-country-row="Liechtenstein" id="country-liechtenstein">
 <th scope="row"><a class="country-link" data-country-link="Liechtenstein" href="#country-liechtenstein">Liechtenstein</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Lithuania" id="country-lithuania">
+<tr hidden data-country-row="Lithuania" id="country-lithuania">
 <th scope="row"><a class="country-link" data-country-link="Lithuania" href="#country-lithuania">Lithuania</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Luxembourg" id="country-luxembourg">
+<tr hidden data-country-row="Luxembourg" id="country-luxembourg">
 <th scope="row"><a class="country-link" data-country-link="Luxembourg" href="#country-luxembourg">Luxembourg</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Macao" id="country-macao">
+<tr hidden data-country-row="Macao" id="country-macao">
 <th scope="row"><a class="country-link" data-country-link="Macao" href="#country-macao">Macao</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Madagascar" id="country-madagascar">
+<tr hidden data-country-row="Madagascar" id="country-madagascar">
 <th scope="row"><a class="country-link" data-country-link="Madagascar" href="#country-madagascar">Madagascar</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Malawi" id="country-malawi">
+<tr hidden data-country-row="Malawi" id="country-malawi">
 <th scope="row"><a class="country-link" data-country-link="Malawi" href="#country-malawi">Malawi</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Malaysia" id="country-malaysia">
+<tr hidden data-country-row="Malaysia" id="country-malaysia">
 <th scope="row"><a class="country-link" data-country-link="Malaysia" href="#country-malaysia">Malaysia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Maldives" id="country-maldives">
+<tr hidden data-country-row="Maldives" id="country-maldives">
 <th scope="row"><a class="country-link" data-country-link="Maldives" href="#country-maldives">Maldives</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Mali" id="country-mali">
+<tr hidden data-country-row="Mali" id="country-mali">
 <th scope="row"><a class="country-link" data-country-link="Mali" href="#country-mali">Mali</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Malta" id="country-malta">
+<tr hidden data-country-row="Malta" id="country-malta">
 <th scope="row"><a class="country-link" data-country-link="Malta" href="#country-malta">Malta</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Marshall Islands" id="country-marshall-islands">
+<tr hidden data-country-row="Marshall Islands" id="country-marshall-islands">
 <th scope="row"><a class="country-link" data-country-link="Marshall Islands" href="#country-marshall-islands">Marshall Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Martinique" id="country-martinique">
+<tr hidden data-country-row="Martinique" id="country-martinique">
 <th scope="row"><a class="country-link" data-country-link="Martinique" href="#country-martinique">Martinique</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Mauritania" id="country-mauritania">
+<tr hidden data-country-row="Mauritania" id="country-mauritania">
 <th scope="row"><a class="country-link" data-country-link="Mauritania" href="#country-mauritania">Mauritania</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Mauritius" id="country-mauritius">
+<tr hidden data-country-row="Mauritius" id="country-mauritius">
 <th scope="row"><a class="country-link" data-country-link="Mauritius" href="#country-mauritius">Mauritius</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Mayotte" id="country-mayotte">
+<tr hidden data-country-row="Mayotte" id="country-mayotte">
 <th scope="row"><a class="country-link" data-country-link="Mayotte" href="#country-mayotte">Mayotte</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Mexico" id="country-mexico">
+<tr hidden data-country-row="Mexico" id="country-mexico">
 <th scope="row"><a class="country-link" data-country-link="Mexico" href="#country-mexico">Mexico</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Micronesia, Federated States of" id="country-micronesia-federated-states-of">
+<tr hidden data-country-row="Micronesia, Federated States of" id="country-micronesia-federated-states-of">
 <th scope="row"><a class="country-link" data-country-link="Micronesia, Federated States of" href="#country-micronesia-federated-states-of">Micronesia, Federated States of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Moldova, Republic of" id="country-moldova-republic-of">
+<tr hidden data-country-row="Moldova, Republic of" id="country-moldova-republic-of">
 <th scope="row"><a class="country-link" data-country-link="Moldova, Republic of" href="#country-moldova-republic-of">Moldova, Republic of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Monaco" id="country-monaco">
+<tr hidden data-country-row="Monaco" id="country-monaco">
 <th scope="row"><a class="country-link" data-country-link="Monaco" href="#country-monaco">Monaco</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Mongolia" id="country-mongolia">
+<tr hidden data-country-row="Mongolia" id="country-mongolia">
 <th scope="row"><a class="country-link" data-country-link="Mongolia" href="#country-mongolia">Mongolia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Montenegro" id="country-montenegro">
+<tr hidden data-country-row="Montenegro" id="country-montenegro">
 <th scope="row"><a class="country-link" data-country-link="Montenegro" href="#country-montenegro">Montenegro</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Montserrat" id="country-montserrat">
+<tr hidden data-country-row="Montserrat" id="country-montserrat">
 <th scope="row"><a class="country-link" data-country-link="Montserrat" href="#country-montserrat">Montserrat</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Morocco" id="country-morocco">
+<tr hidden data-country-row="Morocco" id="country-morocco">
 <th scope="row"><a class="country-link" data-country-link="Morocco" href="#country-morocco">Morocco</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Mozambique" id="country-mozambique">
+<tr hidden data-country-row="Mozambique" id="country-mozambique">
 <th scope="row"><a class="country-link" data-country-link="Mozambique" href="#country-mozambique">Mozambique</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Myanmar" id="country-myanmar">
+<tr hidden data-country-row="Myanmar" id="country-myanmar">
 <th scope="row"><a class="country-link" data-country-link="Myanmar" href="#country-myanmar">Myanmar</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Namibia" id="country-namibia">
+<tr hidden data-country-row="Namibia" id="country-namibia">
 <th scope="row"><a class="country-link" data-country-link="Namibia" href="#country-namibia">Namibia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Nauru" id="country-nauru">
+<tr hidden data-country-row="Nauru" id="country-nauru">
 <th scope="row"><a class="country-link" data-country-link="Nauru" href="#country-nauru">Nauru</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Nepal" id="country-nepal">
+<tr hidden data-country-row="Nepal" id="country-nepal">
 <th scope="row"><a class="country-link" data-country-link="Nepal" href="#country-nepal">Nepal</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Netherlands" id="country-netherlands">
+<tr hidden data-country-row="Netherlands" id="country-netherlands">
 <th scope="row"><a class="country-link" data-country-link="Netherlands" href="#country-netherlands">Netherlands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="New Caledonia" id="country-new-caledonia">
+<tr hidden data-country-row="New Caledonia" id="country-new-caledonia">
 <th scope="row"><a class="country-link" data-country-link="New Caledonia" href="#country-new-caledonia">New Caledonia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="New Zealand" id="country-new-zealand">
+<tr hidden data-country-row="New Zealand" id="country-new-zealand">
 <th scope="row"><a class="country-link" data-country-link="New Zealand" href="#country-new-zealand">New Zealand</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Nicaragua" id="country-nicaragua">
+<tr hidden data-country-row="Nicaragua" id="country-nicaragua">
 <th scope="row"><a class="country-link" data-country-link="Nicaragua" href="#country-nicaragua">Nicaragua</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Niger" id="country-niger">
+<tr hidden data-country-row="Niger" id="country-niger">
 <th scope="row"><a class="country-link" data-country-link="Niger" href="#country-niger">Niger</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Nigeria" id="country-nigeria">
+<tr hidden data-country-row="Nigeria" id="country-nigeria">
 <th scope="row"><a class="country-link" data-country-link="Nigeria" href="#country-nigeria">Nigeria</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Niue" id="country-niue">
+<tr hidden data-country-row="Niue" id="country-niue">
 <th scope="row"><a class="country-link" data-country-link="Niue" href="#country-niue">Niue</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Norfolk Island" id="country-norfolk-island">
+<tr hidden data-country-row="Norfolk Island" id="country-norfolk-island">
 <th scope="row"><a class="country-link" data-country-link="Norfolk Island" href="#country-norfolk-island">Norfolk Island</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="North Macedonia" id="country-north-macedonia">
+<tr hidden data-country-row="North Macedonia" id="country-north-macedonia">
 <th scope="row"><a class="country-link" data-country-link="North Macedonia" href="#country-north-macedonia">North Macedonia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Northern Mariana Islands" id="country-northern-mariana-islands">
+<tr hidden data-country-row="Northern Mariana Islands" id="country-northern-mariana-islands">
 <th scope="row"><a class="country-link" data-country-link="Northern Mariana Islands" href="#country-northern-mariana-islands">Northern Mariana Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Norway" id="country-norway">
+<tr hidden data-country-row="Norway" id="country-norway">
 <th scope="row"><a class="country-link" data-country-link="Norway" href="#country-norway">Norway</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Oman" id="country-oman">
+<tr hidden data-country-row="Oman" id="country-oman">
 <th scope="row"><a class="country-link" data-country-link="Oman" href="#country-oman">Oman</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -1377,61 +1381,61 @@
 <td>HEC semester-system guidance recommends a 0.00–4.00 GPA/CGPA range. Check your own university policy and transcript.</td>
 <td class="source-cell"><a href="https://www.hec.gov.pk/english/services/universities/Documents/Final%20Examination%20Policy%20Guidelines.pdf" rel="noopener noreferrer" target="_blank">Pakistan Higher Education Commission — semester examination policy guidelines</a></td>
 </tr>
-<tr data-country-row="Palau" id="country-palau">
+<tr hidden data-country-row="Palau" id="country-palau">
 <th scope="row"><a class="country-link" data-country-link="Palau" href="#country-palau">Palau</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Palestine" id="country-palestine">
+<tr hidden data-country-row="Palestine" id="country-palestine">
 <th scope="row"><a class="country-link" data-country-link="Palestine" href="#country-palestine">Palestine</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Palestine, State of" id="country-palestine-state-of">
+<tr hidden data-country-row="Palestine, State of" id="country-palestine-state-of">
 <th scope="row"><a class="country-link" data-country-link="Palestine, State of" href="#country-palestine-state-of">Palestine, State of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Panama" id="country-panama">
+<tr hidden data-country-row="Panama" id="country-panama">
 <th scope="row"><a class="country-link" data-country-link="Panama" href="#country-panama">Panama</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Papua New Guinea" id="country-papua-new-guinea">
+<tr hidden data-country-row="Papua New Guinea" id="country-papua-new-guinea">
 <th scope="row"><a class="country-link" data-country-link="Papua New Guinea" href="#country-papua-new-guinea">Papua New Guinea</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Paraguay" id="country-paraguay">
+<tr hidden data-country-row="Paraguay" id="country-paraguay">
 <th scope="row"><a class="country-link" data-country-link="Paraguay" href="#country-paraguay">Paraguay</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Peru" id="country-peru">
+<tr hidden data-country-row="Peru" id="country-peru">
 <th scope="row"><a class="country-link" data-country-link="Peru" href="#country-peru">Peru</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Philippines" id="country-philippines">
+<tr hidden data-country-row="Philippines" id="country-philippines">
 <th scope="row"><a class="country-link" data-country-link="Philippines" href="#country-philippines">Philippines</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Pitcairn" id="country-pitcairn">
+<tr hidden data-country-row="Pitcairn" id="country-pitcairn">
 <th scope="row"><a class="country-link" data-country-link="Pitcairn" href="#country-pitcairn">Pitcairn</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Poland" id="country-poland">
+<tr hidden data-country-row="Poland" id="country-poland">
 <th scope="row"><a class="country-link" data-country-link="Poland" href="#country-poland">Poland</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -1443,13 +1447,13 @@
 <td>Portugal’s DGES describes course-unit results on a 0–20 scale; qualitative bands are also defined.</td>
 <td class="source-cell"><a href="https://www.dges.gov.pt/pt/pagina/escala-de-classificacao-portuguesa" rel="noopener noreferrer" target="_blank">Portugal Directorate-General for Higher Education (DGES) — Portuguese classification scale</a></td>
 </tr>
-<tr data-country-row="Puerto Rico" id="country-puerto-rico">
+<tr hidden data-country-row="Puerto Rico" id="country-puerto-rico">
 <th scope="row"><a class="country-link" data-country-link="Puerto Rico" href="#country-puerto-rico">Puerto Rico</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Qatar" id="country-qatar">
+<tr hidden data-country-row="Qatar" id="country-qatar">
 <th scope="row"><a class="country-link" data-country-link="Qatar" href="#country-qatar">Qatar</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -1461,319 +1465,319 @@
 <td>The Study in Romania government scholarship guide describes 1–10, with 10 highest and 5 minimum passing.</td>
 <td class="source-cell"><a href="https://scholarships.studyinromania.gov.ro/scholarship-grading-system" rel="noopener noreferrer" target="_blank">Study in Romania — grading system</a></td>
 </tr>
-<tr data-country-row="Russian Federation" id="country-russian-federation">
+<tr hidden data-country-row="Russian Federation" id="country-russian-federation">
 <th scope="row"><a class="country-link" data-country-link="Russian Federation" href="#country-russian-federation">Russian Federation</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Rwanda" id="country-rwanda">
+<tr hidden data-country-row="Rwanda" id="country-rwanda">
 <th scope="row"><a class="country-link" data-country-link="Rwanda" href="#country-rwanda">Rwanda</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Réunion" id="country-reunion">
+<tr hidden data-country-row="Réunion" id="country-reunion">
 <th scope="row"><a class="country-link" data-country-link="Réunion" href="#country-reunion">Réunion</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saint Barthélemy" id="country-saint-barthelemy">
+<tr hidden data-country-row="Saint Barthélemy" id="country-saint-barthelemy">
 <th scope="row"><a class="country-link" data-country-link="Saint Barthélemy" href="#country-saint-barthelemy">Saint Barthélemy</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saint Helena, Ascension and Tristan da Cunha" id="country-saint-helena-ascension-and-tristan-da-cunha">
+<tr hidden data-country-row="Saint Helena, Ascension and Tristan da Cunha" id="country-saint-helena-ascension-and-tristan-da-cunha">
 <th scope="row"><a class="country-link" data-country-link="Saint Helena, Ascension and Tristan da Cunha" href="#country-saint-helena-ascension-and-tristan-da-cunha">Saint Helena, Ascension and Tristan da Cunha</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saint Kitts and Nevis" id="country-saint-kitts-and-nevis">
+<tr hidden data-country-row="Saint Kitts and Nevis" id="country-saint-kitts-and-nevis">
 <th scope="row"><a class="country-link" data-country-link="Saint Kitts and Nevis" href="#country-saint-kitts-and-nevis">Saint Kitts and Nevis</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saint Lucia" id="country-saint-lucia">
+<tr hidden data-country-row="Saint Lucia" id="country-saint-lucia">
 <th scope="row"><a class="country-link" data-country-link="Saint Lucia" href="#country-saint-lucia">Saint Lucia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saint Martin (French part)" id="country-saint-martin-french-part">
+<tr hidden data-country-row="Saint Martin (French part)" id="country-saint-martin-french-part">
 <th scope="row"><a class="country-link" data-country-link="Saint Martin (French part)" href="#country-saint-martin-french-part">Saint Martin (French part)</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saint Pierre and Miquelon" id="country-saint-pierre-and-miquelon">
+<tr hidden data-country-row="Saint Pierre and Miquelon" id="country-saint-pierre-and-miquelon">
 <th scope="row"><a class="country-link" data-country-link="Saint Pierre and Miquelon" href="#country-saint-pierre-and-miquelon">Saint Pierre and Miquelon</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saint Vincent and the Grenadines" id="country-saint-vincent-and-the-grenadines">
+<tr hidden data-country-row="Saint Vincent and the Grenadines" id="country-saint-vincent-and-the-grenadines">
 <th scope="row"><a class="country-link" data-country-link="Saint Vincent and the Grenadines" href="#country-saint-vincent-and-the-grenadines">Saint Vincent and the Grenadines</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Samoa" id="country-samoa">
+<tr hidden data-country-row="Samoa" id="country-samoa">
 <th scope="row"><a class="country-link" data-country-link="Samoa" href="#country-samoa">Samoa</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="San Marino" id="country-san-marino">
+<tr hidden data-country-row="San Marino" id="country-san-marino">
 <th scope="row"><a class="country-link" data-country-link="San Marino" href="#country-san-marino">San Marino</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Sao Tome and Principe" id="country-sao-tome-and-principe">
+<tr hidden data-country-row="Sao Tome and Principe" id="country-sao-tome-and-principe">
 <th scope="row"><a class="country-link" data-country-link="Sao Tome and Principe" href="#country-sao-tome-and-principe">Sao Tome and Principe</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Saudi Arabia" id="country-saudi-arabia">
+<tr hidden data-country-row="Saudi Arabia" id="country-saudi-arabia">
 <th scope="row"><a class="country-link" data-country-link="Saudi Arabia" href="#country-saudi-arabia">Saudi Arabia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Senegal" id="country-senegal">
+<tr hidden data-country-row="Senegal" id="country-senegal">
 <th scope="row"><a class="country-link" data-country-link="Senegal" href="#country-senegal">Senegal</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Serbia" id="country-serbia">
+<tr hidden data-country-row="Serbia" id="country-serbia">
 <th scope="row"><a class="country-link" data-country-link="Serbia" href="#country-serbia">Serbia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Seychelles" id="country-seychelles">
+<tr hidden data-country-row="Seychelles" id="country-seychelles">
 <th scope="row"><a class="country-link" data-country-link="Seychelles" href="#country-seychelles">Seychelles</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Sierra Leone" id="country-sierra-leone">
+<tr hidden data-country-row="Sierra Leone" id="country-sierra-leone">
 <th scope="row"><a class="country-link" data-country-link="Sierra Leone" href="#country-sierra-leone">Sierra Leone</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Singapore" id="country-singapore">
+<tr hidden data-country-row="Singapore" id="country-singapore">
 <th scope="row"><a class="country-link" data-country-link="Singapore" href="#country-singapore">Singapore</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Sint Maarten (Dutch part)" id="country-sint-maarten-dutch-part">
+<tr hidden data-country-row="Sint Maarten (Dutch part)" id="country-sint-maarten-dutch-part">
 <th scope="row"><a class="country-link" data-country-link="Sint Maarten (Dutch part)" href="#country-sint-maarten-dutch-part">Sint Maarten (Dutch part)</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Slovakia" id="country-slovakia">
+<tr hidden data-country-row="Slovakia" id="country-slovakia">
 <th scope="row"><a class="country-link" data-country-link="Slovakia" href="#country-slovakia">Slovakia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Slovenia" id="country-slovenia">
+<tr hidden data-country-row="Slovenia" id="country-slovenia">
 <th scope="row"><a class="country-link" data-country-link="Slovenia" href="#country-slovenia">Slovenia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Solomon Islands" id="country-solomon-islands">
+<tr hidden data-country-row="Solomon Islands" id="country-solomon-islands">
 <th scope="row"><a class="country-link" data-country-link="Solomon Islands" href="#country-solomon-islands">Solomon Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Somalia" id="country-somalia">
+<tr hidden data-country-row="Somalia" id="country-somalia">
 <th scope="row"><a class="country-link" data-country-link="Somalia" href="#country-somalia">Somalia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="South Africa" id="country-south-africa">
+<tr hidden data-country-row="South Africa" id="country-south-africa">
 <th scope="row"><a class="country-link" data-country-link="South Africa" href="#country-south-africa">South Africa</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="South Georgia and the South Sandwich Islands" id="country-south-georgia-and-the-south-sandwich-islands">
+<tr hidden data-country-row="South Georgia and the South Sandwich Islands" id="country-south-georgia-and-the-south-sandwich-islands">
 <th scope="row"><a class="country-link" data-country-link="South Georgia and the South Sandwich Islands" href="#country-south-georgia-and-the-south-sandwich-islands">South Georgia and the South Sandwich Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="South Sudan" id="country-south-sudan">
+<tr hidden data-country-row="South Sudan" id="country-south-sudan">
 <th scope="row"><a class="country-link" data-country-link="South Sudan" href="#country-south-sudan">South Sudan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Spain" id="country-spain">
+<tr hidden data-country-row="Spain" id="country-spain">
 <th scope="row"><a class="country-link" data-country-link="Spain" href="#country-spain">Spain</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Sri Lanka" id="country-sri-lanka">
+<tr hidden data-country-row="Sri Lanka" id="country-sri-lanka">
 <th scope="row"><a class="country-link" data-country-link="Sri Lanka" href="#country-sri-lanka">Sri Lanka</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Sudan" id="country-sudan">
+<tr hidden data-country-row="Sudan" id="country-sudan">
 <th scope="row"><a class="country-link" data-country-link="Sudan" href="#country-sudan">Sudan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Suriname" id="country-suriname">
+<tr hidden data-country-row="Suriname" id="country-suriname">
 <th scope="row"><a class="country-link" data-country-link="Suriname" href="#country-suriname">Suriname</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Svalbard and Jan Mayen" id="country-svalbard-and-jan-mayen">
+<tr hidden data-country-row="Svalbard and Jan Mayen" id="country-svalbard-and-jan-mayen">
 <th scope="row"><a class="country-link" data-country-link="Svalbard and Jan Mayen" href="#country-svalbard-and-jan-mayen">Svalbard and Jan Mayen</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Sweden" id="country-sweden">
+<tr hidden data-country-row="Sweden" id="country-sweden">
 <th scope="row"><a class="country-link" data-country-link="Sweden" href="#country-sweden">Sweden</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Switzerland" id="country-switzerland">
+<tr hidden data-country-row="Switzerland" id="country-switzerland">
 <th scope="row"><a class="country-link" data-country-link="Switzerland" href="#country-switzerland">Switzerland</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Syrian Arab Republic" id="country-syrian-arab-republic">
+<tr hidden data-country-row="Syrian Arab Republic" id="country-syrian-arab-republic">
 <th scope="row"><a class="country-link" data-country-link="Syrian Arab Republic" href="#country-syrian-arab-republic">Syrian Arab Republic</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Taiwan" id="country-taiwan">
+<tr hidden data-country-row="Taiwan" id="country-taiwan">
 <th scope="row"><a class="country-link" data-country-link="Taiwan" href="#country-taiwan">Taiwan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Taiwan, Province of China" id="country-taiwan-province-of-china">
+<tr hidden data-country-row="Taiwan, Province of China" id="country-taiwan-province-of-china">
 <th scope="row"><a class="country-link" data-country-link="Taiwan, Province of China" href="#country-taiwan-province-of-china">Taiwan, Province of China</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Tajikistan" id="country-tajikistan">
+<tr hidden data-country-row="Tajikistan" id="country-tajikistan">
 <th scope="row"><a class="country-link" data-country-link="Tajikistan" href="#country-tajikistan">Tajikistan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Tanzania, United Republic of" id="country-tanzania-united-republic-of">
+<tr hidden data-country-row="Tanzania, United Republic of" id="country-tanzania-united-republic-of">
 <th scope="row"><a class="country-link" data-country-link="Tanzania, United Republic of" href="#country-tanzania-united-republic-of">Tanzania, United Republic of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Thailand" id="country-thailand">
+<tr hidden data-country-row="Thailand" id="country-thailand">
 <th scope="row"><a class="country-link" data-country-link="Thailand" href="#country-thailand">Thailand</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Timor-Leste" id="country-timor-leste">
+<tr hidden data-country-row="Timor-Leste" id="country-timor-leste">
 <th scope="row"><a class="country-link" data-country-link="Timor-Leste" href="#country-timor-leste">Timor-Leste</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Togo" id="country-togo">
+<tr hidden data-country-row="Togo" id="country-togo">
 <th scope="row"><a class="country-link" data-country-link="Togo" href="#country-togo">Togo</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Tokelau" id="country-tokelau">
+<tr hidden data-country-row="Tokelau" id="country-tokelau">
 <th scope="row"><a class="country-link" data-country-link="Tokelau" href="#country-tokelau">Tokelau</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Tonga" id="country-tonga">
+<tr hidden data-country-row="Tonga" id="country-tonga">
 <th scope="row"><a class="country-link" data-country-link="Tonga" href="#country-tonga">Tonga</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Trinidad and Tobago" id="country-trinidad-and-tobago">
+<tr hidden data-country-row="Trinidad and Tobago" id="country-trinidad-and-tobago">
 <th scope="row"><a class="country-link" data-country-link="Trinidad and Tobago" href="#country-trinidad-and-tobago">Trinidad and Tobago</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Tunisia" id="country-tunisia">
+<tr hidden data-country-row="Tunisia" id="country-tunisia">
 <th scope="row"><a class="country-link" data-country-link="Tunisia" href="#country-tunisia">Tunisia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Turkmenistan" id="country-turkmenistan">
+<tr hidden data-country-row="Turkmenistan" id="country-turkmenistan">
 <th scope="row"><a class="country-link" data-country-link="Turkmenistan" href="#country-turkmenistan">Turkmenistan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Turks and Caicos Islands" id="country-turks-and-caicos-islands">
+<tr hidden data-country-row="Turks and Caicos Islands" id="country-turks-and-caicos-islands">
 <th scope="row"><a class="country-link" data-country-link="Turks and Caicos Islands" href="#country-turks-and-caicos-islands">Turks and Caicos Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Tuvalu" id="country-tuvalu">
+<tr hidden data-country-row="Tuvalu" id="country-tuvalu">
 <th scope="row"><a class="country-link" data-country-link="Tuvalu" href="#country-tuvalu">Tuvalu</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Türkiye" id="country-turkiye">
+<tr hidden data-country-row="Türkiye" id="country-turkiye">
 <th scope="row"><a class="country-link" data-country-link="Türkiye" href="#country-turkiye">Türkiye</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Uganda" id="country-uganda">
+<tr hidden data-country-row="Uganda" id="country-uganda">
 <th scope="row"><a class="country-link" data-country-link="Uganda" href="#country-uganda">Uganda</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Ukraine" id="country-ukraine">
+<tr hidden data-country-row="Ukraine" id="country-ukraine">
 <th scope="row"><a class="country-link" data-country-link="Ukraine" href="#country-ukraine">Ukraine</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="United Arab Emirates" id="country-united-arab-emirates">
+<tr hidden data-country-row="United Arab Emirates" id="country-united-arab-emirates">
 <th scope="row"><a class="country-link" data-country-link="United Arab Emirates" href="#country-united-arab-emirates">United Arab Emirates</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -1791,85 +1795,85 @@
 <td>University of Wisconsin–Madison lists 0.0–4.0; this is an institutional example, not a national rule.</td>
 <td class="source-cell"><a href="https://registrar.wisc.edu/student-grades/" rel="noopener noreferrer" target="_blank">University of Wisconsin–Madison — 4.0 highest GPA example</a></td>
 </tr>
-<tr data-country-row="United States Minor Outlying Islands" id="country-united-states-minor-outlying-islands">
+<tr hidden data-country-row="United States Minor Outlying Islands" id="country-united-states-minor-outlying-islands">
 <th scope="row"><a class="country-link" data-country-link="United States Minor Outlying Islands" href="#country-united-states-minor-outlying-islands">United States Minor Outlying Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Uruguay" id="country-uruguay">
+<tr hidden data-country-row="Uruguay" id="country-uruguay">
 <th scope="row"><a class="country-link" data-country-link="Uruguay" href="#country-uruguay">Uruguay</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Uzbekistan" id="country-uzbekistan">
+<tr hidden data-country-row="Uzbekistan" id="country-uzbekistan">
 <th scope="row"><a class="country-link" data-country-link="Uzbekistan" href="#country-uzbekistan">Uzbekistan</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Vanuatu" id="country-vanuatu">
+<tr hidden data-country-row="Vanuatu" id="country-vanuatu">
 <th scope="row"><a class="country-link" data-country-link="Vanuatu" href="#country-vanuatu">Vanuatu</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Venezuela, Bolivarian Republic of" id="country-venezuela-bolivarian-republic-of">
+<tr hidden data-country-row="Venezuela, Bolivarian Republic of" id="country-venezuela-bolivarian-republic-of">
 <th scope="row"><a class="country-link" data-country-link="Venezuela, Bolivarian Republic of" href="#country-venezuela-bolivarian-republic-of">Venezuela, Bolivarian Republic of</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Viet Nam" id="country-viet-nam">
+<tr hidden data-country-row="Viet Nam" id="country-viet-nam">
 <th scope="row"><a class="country-link" data-country-link="Viet Nam" href="#country-viet-nam">Viet Nam</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Virgin Islands, British" id="country-virgin-islands-british">
+<tr hidden data-country-row="Virgin Islands, British" id="country-virgin-islands-british">
 <th scope="row"><a class="country-link" data-country-link="Virgin Islands, British" href="#country-virgin-islands-british">Virgin Islands, British</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Virgin Islands, U.S." id="country-virgin-islands-u-s">
+<tr hidden data-country-row="Virgin Islands, U.S." id="country-virgin-islands-u-s">
 <th scope="row"><a class="country-link" data-country-link="Virgin Islands, U.S." href="#country-virgin-islands-u-s">Virgin Islands, U.S.</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Wallis and Futuna" id="country-wallis-and-futuna">
+<tr hidden data-country-row="Wallis and Futuna" id="country-wallis-and-futuna">
 <th scope="row"><a class="country-link" data-country-link="Wallis and Futuna" href="#country-wallis-and-futuna">Wallis and Futuna</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Western Sahara" id="country-western-sahara">
+<tr hidden data-country-row="Western Sahara" id="country-western-sahara">
 <th scope="row"><a class="country-link" data-country-link="Western Sahara" href="#country-western-sahara">Western Sahara</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Yemen" id="country-yemen">
+<tr hidden data-country-row="Yemen" id="country-yemen">
 <th scope="row"><a class="country-link" data-country-link="Yemen" href="#country-yemen">Yemen</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Zambia" id="country-zambia">
+<tr hidden data-country-row="Zambia" id="country-zambia">
 <th scope="row"><a class="country-link" data-country-link="Zambia" href="#country-zambia">Zambia</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Zimbabwe" id="country-zimbabwe">
+<tr hidden data-country-row="Zimbabwe" id="country-zimbabwe">
 <th scope="row"><a class="country-link" data-country-link="Zimbabwe" href="#country-zimbabwe">Zimbabwe</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
 <td class="source-cell">—</td>
 </tr>
-<tr data-country-row="Åland Islands" id="country-aland-islands">
+<tr hidden data-country-row="Åland Islands" id="country-aland-islands">
 <th scope="row"><a class="country-link" data-country-link="Åland Islands" href="#country-aland-islands">Åland Islands</a></th>
 <td>Not verified in this directory</td>
 <td>Check the university’s official grading rules.</td>
@@ -1910,6 +1914,8 @@
   const search = document.getElementById('countrySearch');
   const tableBody = document.getElementById('countryTableBody');
   const count = document.getElementById('countryCount');
+  const showUnverified = document.getElementById('showUnverified');
+  const directoryNote = document.getElementById('countryDirectoryNote');
   const openFull = document.getElementById('openFullCgpa');
   let current = null;
   let nextRow = 1;
@@ -2051,14 +2057,30 @@
   });
   document.getElementById('calculateCountryCgpa').addEventListener('click', calculate);
   document.getElementById('resetCountryCgpa').addEventListener('click', resetRows);
-  search.addEventListener('input', () => {
-    const q = search.value.trim().toLocaleLowerCase(); let visible = 0;
-    tableBody.querySelectorAll('tr').forEach(tr => {
-      const match = tr.dataset.countryRow.toLocaleLowerCase().includes(q);
-      tr.hidden = !match; if (match) visible++;
+  const documentedCount = data.filter(item => item.kind !== 'unverified').length;
+  const unverifiedCount = data.length - documentedCount;
+  function filterCountryDirectory() {
+    const q = search.value.trim().toLocaleLowerCase();
+    const includeUnverified = showUnverified.checked;
+    let visible = 0;
+    tableBody.querySelectorAll('tr[data-country-row]').forEach(tr => {
+      const item = byName.get(tr.dataset.countryRow);
+      const isUnverified = !item || item.kind === 'unverified';
+      const matchesSearch = tr.dataset.countryRow.toLocaleLowerCase().includes(q);
+      const shouldShow = matchesSearch && (includeUnverified || !isUnverified);
+      tr.hidden = !shouldShow;
+      if (shouldShow) visible++;
     });
-    count.textContent = visible + ' of ' + data.length + ' entries';
-  });
+    count.textContent = includeUnverified
+      ? visible + ' of ' + data.length + ' entries'
+      : visible + ' of ' + documentedCount + ' documented entries';
+    directoryNote.textContent = includeUnverified
+      ? 'Showing matching entries, including ' + unverifiedCount + ' records without a verified grading reference. These entries are not grading claims.'
+      : 'Showing ' + visible + ' of ' + documentedCount + ' entries with documented grading references. ' + unverifiedCount + ' entries without a verified grading reference are hidden by default.';
+  }
+  search.addEventListener('input', filterCountryDirectory);
+  showUnverified.addEventListener('change', filterCountryDirectory);
+  filterCountryDirectory();
   resetRows();
   const requested = new URLSearchParams(location.search).get('country');
   if (requested && byName.has(requested)) chooseCountry(requested, false, false);

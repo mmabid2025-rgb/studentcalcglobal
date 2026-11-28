@@ -32,7 +32,7 @@ const UNIVERSITIES = [
     "country": "Pakistan",
     "name": "National University of Computer and Emerging Sciences (FAST-NUCES)",
     "city": "Islamabad (multi-campus)",
-    "type": "Public-sector chartered",
+    "type": "Private",
     "fields": [
       "Computer Science",
       "AI",
@@ -40,8 +40,8 @@ const UNIVERSITIES = [
       "Business"
     ],
     "url": "https://www.nu.edu.pk/",
-    "source": "https://www.hec.gov.pk/Site/HEIs/default.aspx",
-    "sourceLabel": "HEC recognised institutions"
+    "source": "https://khi.nu.edu.pk/",
+    "sourceLabel": "FAST-NUCES official university description"
   },
   {
     "country": "Pakistan",
