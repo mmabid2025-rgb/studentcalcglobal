@@ -171,3 +171,57 @@ BLOCKERS
 - Google PageSpeed connector is not connected. It requires the website URL https://studentcalcglobal.com/ and a Google PageSpeed Insights API key entered through the secure connector authorization flow; never paste the key into chat.
 - Netlify management is not connected, and external live HTTP/browser inspection is unavailable in this run. Manual preview QA and live redirect/header checks remain outstanding.
 - No AdSense account diagnostic data is connected; the actual rejection reason cannot be inferred from Search Console or repository contents.
+
+
+FOLLOW-UP REVIEW — 2026-11-28
+================================
+
+SEARCH CONSOLE — CONNECTED DOMAIN PROPERTY
+Property: sc-domain:studentcalcglobal.com
+Requested date range: 2026-11-01 through 2026-11-27.
+Latest daily records returned: 2026-11-25. No daily rows were returned for Nov 26–27.
+
+Matched 12-day property-level periods (daily dimension):
+- 2026-11-01 to 2026-11-12: 190 impressions, 4 clicks, 2.11% CTR, impression-weighted average position 29.28.
+- 2026-11-13 to 2026-11-24: 187 impressions, 4 clicks, 2.14% CTR, impression-weighted average position 27.70.
+- Change: impressions -3 (-1.6%); clicks unchanged; CTR +0.03 percentage points; average position improved by about 1.59 places. This is effectively flat search volume and a very small sample, not evidence of a durable growth trend.
+- Across the returned daily rows for 2026-11-01 to 2026-11-25: 377 impressions and 8 clicks.
+- Page-dimension rows for the same requested range: 446 impressions and 8 clicks. Query-dimension rows: 92 impressions and 0 clicks. These dimensions do not reconcile with the daily aggregate; use the daily property-level total for sitewide reporting and treat page/query rows as directional only. Query reporting also omits anonymized/low-volume queries.
+- Highest page rows: /study-hours-calculator (90 impressions, 0 clicks, average position 7.93); /articles/how-to-calculate-cgpa (50, 0, 60.26); /articles/grading-systems-around-world (47, 1, 46.85); /credit-hours-calculator (46, 0, 11.11); /articles/course-credits-and-gpa (42, 0, 22.26); /international-gpa-calculator.html (39, 0, 43.33); homepage (29, 7, 14.45).
+- Highest visible query rows: "how to calculate cgpa" (8 impressions, position 60.50); "how to calculate cgpa in university" (5, position 43); "cgpa formula" (3, position 70.67); "gpa calculator europe" (3, position 82); "honours cgpa calculation" (3, position 53). These are low counts and should guide diagnosis, not be treated as reliable demand estimates.
+- Sitemap: https://studentcalcglobal.com/sitemap.xml; 30 submitted URLs, 0 errors, 0 warnings; last submitted 2026-11-22; last downloaded 2026-11-27 19:27 UTC. Successful processing does not prove all submitted URLs are indexed.
+
+NEW SAFE CALCULATOR-QUALITY CHANGE
+- Updated grade-converter.html on the existing audit branch to make the modified Bavarian formula's source-scale assumption explicit.
+- Added a required source-scale direction choice. The estimator now proceeds only when the user selects a higher-is-better source scale; it refuses lower-is-better scales instead of silently applying the formula in the wrong direction.
+- Clarified that the German 1.0–4.0 result is an indicative estimate, not an official admission decision. Added associated help text and explicit labels.
+- Added validation for blank direction, blank grade inputs, non-positive maximum, negative passing threshold, invalid ordering and achieved grades outside the entered source range.
+- No national grading values or conversions were added.
+
+TESTS FOR NEW CHANGE
+- Static assertions: 8/8 passed (title, direction selector, help association, lower-is-better rejection, numeric range validation, formula presence, non-binding caveat and label associations).
+- Logic cases: 5/5 passed:
+  - Source 4.0 max / 2.0 minimum pass / 3.2 achieved -> German estimate 2.20.
+  - Source 10 max / 5 minimum pass / 8 achieved -> German estimate 2.20.
+  - Lower-is-better source scale is rejected.
+  - Achieved grade below minimum pass is rejected.
+  - Zero maximum is rejected.
+- These are static and isolated logic checks, not full browser or admissions-policy validation.
+
+CURRENT BRANCH / DEPLOYMENT
+- Branch: audit/safe-seo-calculator-fixes-2026-11-23.
+- New commit: 553bde215e3b29a793a3a82bec44aaf11937566c — "Clarify source-scale direction in German grade estimator".
+- Branch comparison: 25 commits ahead of main, 0 behind.
+- Netlify deploy-preview status for the new commit: PENDING at the time of this report. Do not treat the previous successful preview status as validation of this latest commit.
+- PR #13 remains a draft. No merge, production deployment or domain change was performed.
+
+CURRENT PRIORITIES / BLOCKERS
+- Study Hours page has 90 page-dimension impressions, 0 clicks, average position 7.93. Inspect actual snippet and query context before changing title; this alone does not prove a title problem.
+- CGPA guide has 50 impressions, 0 clicks, average position 60.26. Visible query "how to calculate cgpa" has 8 impressions at position 60.50. The article already has a credit-weighted formula, examples and policy caveats; do not add repetitive keyword-stuffed copy. Seek a distinct, sourced improvement only.
+- International GPA page appears in Search Analytics under both .html (39 impressions) and extensionless (7 impressions) variants. Search Analytics page URLs do not establish Google's selected canonical. Sitemap and source canonical use .html. Confirm live redirects and URL Inspection before changing redirect rules.
+- Favicon: the current audit branch homepage still references /assets/studentcalcglobal-logo.svg. PNG favicon PR #10 is separate and has not been integrated. Its binary asset is not available through the current UTF-8 file-write path; do not substitute a guessed or regenerated file.
+- Search Console connector provides Search Analytics and sitemap summaries, but no URL Inspection API. Automated per-URL indexed status and Google-selected canonical need direct Search Console API authorization with https://www.googleapis.com/auth/webmasters.readonly and access to sc-domain:studentcalcglobal.com.
+- PageSpeed connector is available but has no connected account. Setup requires https://studentcalcglobal.com/ and a Google PageSpeed Insights API key entered through the secure connector flow; do not paste the key into chat.
+- Netlify management is not connected. The latest deploy-preview status is pending; production response headers, redirects and live settings cannot be inspected here. External DNS resolution is unavailable in this execution environment.
+- Older overlapping open pull requests remain (#1, #6, #7, #8, #10 and #11). Reconcile them with PR #13 before any merge.
+- No indexed-URL count, backlink count, search-volume estimate, ranking guarantee or AdSense outcome is claimed.
